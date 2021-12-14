@@ -43,14 +43,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="A.cs" />
-    <Compile Include="B.cs" />
-    <Compile Include="C.cs" />
+    <Compile Include="core\EquationInterface.cs" />
+    <Compile Include="core\LogAbstract.cs" />
+    <Compile Include="core\LogInterface.cs" />
+    <Compile Include="Ponomarev\LinearClass.cs" />
+    <Compile Include="Ponomarev\PonomarevLog.cs" />
+    <Compile Include="Ponomarev\QuadraticClass.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

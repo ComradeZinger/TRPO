@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Ponomarev;
+using core;
 
 namespace ConsoleApp1
 {
@@ -12,8 +14,8 @@ namespace ConsoleApp1
         {
             try
             {
-                B b = new B();
-                List<double> xList = b.quadraticEquation(0, 0, 15);
+                QuadraticClass b = new QuadraticClass();
+                List<float> xList = b.solve(0, 0, 15);
                 if (xList.Count != 0)
                 {
                     for (int i = 0; i < xList.Count; i++)
