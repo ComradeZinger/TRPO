@@ -13,9 +13,10 @@ namespace Ponomarev
         { 
             if (a != 0)
             {
+                PonomarevLog.I().log("Это линейное уравнение");
                 return x = new List<float>() { -b / a };
             }
-            throw new Exception("Уравнение не существует т.к. a = 0");
+            throw new PonomarevException("ОШИБКА: Уравнение не существует т.к. a = 0");
         }
     }
 }

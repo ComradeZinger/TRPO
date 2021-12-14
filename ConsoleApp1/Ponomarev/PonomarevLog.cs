@@ -11,18 +11,21 @@ namespace Ponomarev
     {
         private static PonomarevLog instance;
         private List<string> LogLog = new List<string>();
+        private PonomarevLog()
+        {
+
+        }
         public LogInterface log(string str)
         {
             LogLog.Add(str);
             return this;
         }
-
         public LogInterface write()
         {
             writeConsole(LogLog.ToArray());
             return this;
         }
-        public PonomarevLog I()
+        public static PonomarevLog I()
         {
             if (instance == null)
                 instance = new PonomarevLog();

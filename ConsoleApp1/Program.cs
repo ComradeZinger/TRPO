@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Ponomarev;
 using core;
 
-namespace ConsoleApp1
+namespace Ponomarev
 {
     class Program
     {
@@ -14,25 +14,30 @@ namespace ConsoleApp1
         {
             try
             {
-                QuadraticClass b = new QuadraticClass();
-                List<float> xList = b.solve(0, 0, 15);
-                if (xList.Count != 0)
-                {
-                    for (int i = 0; i < xList.Count; i++)
-                    {
-                        Console.WriteLine(xList.ElementAt(i).ToString());
-                    }
-                }
-                else
-                {
-                    throw new ArgumentNullException();
-                }
+                Console.Write("a = ");
+                int a = Convert.ToInt32(Console.ReadLine());
+                Console.Write("b = ");
+                int b = Convert.ToInt32(Console.ReadLine());
+                Console.Write("c = ");
+                int c = Convert.ToInt32(Console.ReadLine());
+
+                PonomarevLog.I().log($"a = {a}, b = {b}, c = {c}");
+                PonomarevLog.I().log($"{a}x^2 + {b}x + {c} = 0");
+
+                QuadraticClass quadratic = new QuadraticClass();
+                PonomarevLog.I().log($"Корни уравнения: {string.Join(" , ", quadratic.solve(a, b, c))}");
+
+            }
+            catch (PonomarevException ex)
+            {
+                PonomarevLog.I().log(ex.Message);
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Уровнение не имеет корней или не существует: " + ex.Message);
+                PonomarevLog.I().log(ex.Message);
             }
-            
+
+            PonomarevLog.I().write();
 
             Console.ReadKey();
         }

@@ -47,6 +47,7 @@
     <Compile Include="core\LogAbstract.cs" />
     <Compile Include="core\LogInterface.cs" />
     <Compile Include="Ponomarev\LinearClass.cs" />
+    <Compile Include="Ponomarev\PonomarevException.cs" />
     <Compile Include="Ponomarev\PonomarevLog.cs" />
     <Compile Include="Ponomarev\QuadraticClass.cs" />
     <Compile Include="Program.cs" />

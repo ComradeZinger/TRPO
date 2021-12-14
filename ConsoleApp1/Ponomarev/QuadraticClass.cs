@@ -17,6 +17,7 @@ namespace Ponomarev
                 return linearEquation(b, c);
             }
             float Dis = discriminant(a, b, c);
+            PonomarevLog.I().log("Это квадратное уравнение");
             if (Dis == 0)
             {
                 return xRes = new List<float>() { -b / 2 * a };
@@ -24,7 +25,7 @@ namespace Ponomarev
 
             if (Dis < 0)
             {
-                throw new Exception("Dis < 0");
+                throw new PonomarevException("ОШИБКА: Dis < 0");
             }
 
             return xRes = new List<float>() { (-b + (float)Math.Sqrt(Dis)) / (2 * a) , (-b - (float)Math.Sqrt(Dis)) / (2 * a) };
